@@ -1,0 +1,24 @@
+#include <vector>
+#include <iostream>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int length = nums.size();
+        int j = 0;
+        int i;
+        for (int i = j; i < length; i++) {
+            i += 1;
+            int add = nums[j] + nums[i];
+            if (add == target) {
+                cout << "\nExplanation: Because " << nums[j] << " + " << nums[i] << " = " << target << endl;
+                return {j, i};
+            } else if (i == length) {
+                j = j + 1;
+                i = j - 1;
+            } 
+        }
+        return {nums[i], nums[j]};
+    }
+};
